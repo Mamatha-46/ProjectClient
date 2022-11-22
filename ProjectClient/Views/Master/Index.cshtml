@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ProjectClient.Models.Googlesheet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Master", FormMethod.Post))
+{
+<span>Enter MobileNumber or IDProofNumber:</span>@Html.TextBox("Number")
+    <input type="submit" value="Search" />
+   
+    if (Model.Count()==0)
+    {
+        <p style="color:red;">No Records Found</p>
+    }
+    <table align="center" class="table table-bordered">
+        <tr>
+            @Html.ActionLink("Create New", "Create")
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Mobile</th>
+            <th>Alternatemobilenumber</th>
+            <th>EmailID</th>
+            <th>IDType</th>
+            <th>IDProofnumber</th>
+            <th>IDproof</th>
+            <th>Photo</th>
+        </tr>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Alternatemobilenumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDproof)
+                </th>
+                <th>i
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                <th></th>*@
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Mobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Alternatemobilenumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.EmailID)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.IDType)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.IDProofnumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.IDproof)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Photo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
+                </td>
+            </tr>
+        }
+    </table>
+ }
+
+@Html.ActionLink("BacktoIndex", "Index")

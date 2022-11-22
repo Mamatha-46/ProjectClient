@@ -1,0 +1,163 @@
+﻿@model ProjectClient.Models.Googlesheet
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Master", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table align="center">
+
+        <tr>
+            <td>@Html.Label("FirstName")</td>
+            <td>@Html.TextBox("FirstName")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("LastName")</td>
+            <td>@Html.TextBox("LastName")</td>
+
+        </tr>
+        <tr>
+            <td>@Html.Label("Mobile")</td>
+            <td>@Html.TextBox("Mobile")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Alternatemobilenumber")</td>
+            <td>@Html.TextBox("Alternatemobilenumber")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("EmailID")</td>
+            <td>@Html.TextBox("EmailID")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("IDType")</td>
+            @{
+                string[] IDType = new string[] { "--Select--", "Aadhar card", "PAN card", "VoterID" };
+            }
+
+            <td>
+                @Html.DropDownList("IDType", new SelectList(IDType), new { id = "ddl_IDType" })
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script type="text/javascript">
+                $(document).ready(function ()
+                {
+                    $('#ddl_IDType').change(function ()
+                    {
+                        var selectedValue = $(this).val();
+                        if (selectedValue == "Aadhar card") {
+                            selectedValue = "Enter 12 digit aadhar";
+                        }
+                        else if (selectedValue == "PAN card") {
+                            selectedValue = "Enter 10 digit alphanumeric PAN number";
+                        }
+                        else if (selectedValue == "VoterID") {
+                            selectedValue = "Enter 10 digit alphanumeric VoterID";
+                        }
+                        else
+                        {
+                            selectedValue = "";
+                        }
+                        $('#divResult').html(selectedValue);
+                    });
+                });
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("IDProofnumber")</td>
+            <td>
+                <input id="txtidnumber" name="IDProofnumber" type="text" value="" />
+                <span style="color:red" id="spnmsg"></span>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script type="text/javascript">
+                $(function ()
+                {
+                    //debugger;
+                    $("#txtidnumber").next('span').hide(); //Hide Initially
+                    $("#txtidnumber").change(function ()
+                    {
+
+                     var value = $("#ddl_IDType").val();
+                     var input = $(this).val();
+                     var span = $(this).next('span'); //Get next span element
+                        if (input == "")
+                        {
+                            debugger;
+                            span.text('').hide();
+                        }
+                        else
+                        {
+                            if (value == "Aadhar card")
+                            {
+                                var regexname = /^([2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4})$/;
+                                if (regexname.test(input))
+                                {
+                                    span.text('').hide();
+                                    $('#divResult').html("");
+                                }
+                                else
+                                {
+                                    span.text("Enter valid aadhar ex:123456123456").show();
+                                    $('#divResult').html("");
+                                }
+                            }
+                            else if (value == "PAN card")
+                            {
+                                 var regexname = /^([A-Z]{5}[0-9]{4}[A-Z]{1})$/;
+                                 if (regexname.test(input))
+                                 {
+                                 span.text('').hide();
+                                 $('#divResult').html("");
+                                 }
+                                 else
+                                 {
+                                 span.text("Enter valid PAN ex:APOJK6325P").show();
+                                 $('#divResult').html("");
+                                 }
+                            }
+                            else if (value == "VoterID")
+                            {
+                                var regexname = /^([A-Z]{3}[0-9]{7})$/;
+                                if (regexname.test(input))
+                                {
+                                    span.text('').hide();
+                                    $('#divResult').html("");
+                                }
+                                else
+                                {
+                                    span.text("Enter valid VoterID ex:APK4753767").show();
+                                    $('#divResult').html("");
+                                }
+                            }
+                        }
+
+                    return;
+                    });
+                span.text('').hide();//Clear Text and hide
+                });
+                </script>
+            </td>
+            <td><div id="divResult" style="color:green"></div></td>
+
+        </tr>
+        <tr>
+            <td>@Html.Label("IDproof")</td>
+            <td><input type="file" id="hgsd" name="ImageFile" /></td>
+            @ViewBag.Message
+        </tr>
+        <tr>
+            <td>@Html.Label("Photo")</td>
+            <td><input type="file" id="photo" name="ImageFile1" /></td>
+            @ViewBag.Message
+        </tr>
+
+        <tr>
+            <td align="center"><input type="submit" value="Insert" /></td>
+        </tr>
+    </table>
+
+    @Html.ActionLink("BackToIndex", "Index")
+}

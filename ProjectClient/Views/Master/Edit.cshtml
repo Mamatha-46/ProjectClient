@@ -1,0 +1,92 @@
+﻿@model ProjectClient.Models.Googlesheet
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Master", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+
+        <tr>
+
+            <td>@Html.Label("ID") </td>
+            <td>@Html.TextBox("ID")</td>
+
+
+        </tr>
+        <tr>
+
+            <td> @Html.Label("FirstName")</td>
+            <td>@Html.TextBox("FirstName")</td>
+        </tr>
+        <tr>
+
+            <td> @Html.Label("LastName")</td>
+            <td>@Html.TextBox("LastName")</td>
+
+        </tr>
+        <tr>
+            
+            <td>@Html.Label("Mobile")</td>
+            <td>@Html.TextBox("Mobile")</td>
+        </tr>
+        <tr>
+
+            <td>@Html.Label("Alternatemobilenumber")</td>
+            <td>@Html.TextBox("Alternatemobilenumber")</td>
+
+        </tr>
+        <tr>
+
+            <td>@Html.Label("EmailID")</td>
+            <td>@Html.TextBox("EmailID")</td>
+        </tr>
+        <tr>
+            <td> <label for="IDType">IDType</label> </td>
+            <td>
+                <select name="IdType" id="IdType">
+                    <option value="Select">Select</option>
+                    <option value="AdharCard">AdharCard</option>
+                    <option value="VoterId">VoterId</option>
+                    <option value="PanCard">PanCard</option>
+                </select>
+            </td>
+        </tr>   
+        <tr>
+                    <td>@Html.Label("IDProofnumber")</td>
+                    <td>@Html.TextBox("IDProofnumber")</td>
+        </tr>
+                <tr>
+                  <td>@Html.Label("IDproof")</td> 
+                 <td>
+                     @{ ViewBag.value = Model.IDproof;}
+                     @{ TempData["Data"] = ViewBag.value;}
+                     <input  type="file" name="ImageFile"class="forupload"/>
+                     <a class="title" href="/Image/@Model.IDproof" target="_blank" style="margin-top:10px">
+                        @ViewBag.value
+                     </a>
+                 </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Photo")</td>
+                    <td>
+                        @{ ViewBag.message = Model.Photo;}
+                        @{ TempData["Data1"] = ViewBag.message;}
+                        <input type="file" name="ImageFile1" class="forupload" />
+                        <a class="title" href="/Image/@Model.Photo" target="_blank" style="margin-top:10px">
+                            @ViewBag.message
+                        </a>
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Update" />
+                </td>
+            </tr>
+
+        </table>
+    }
+
+        @Html.ActionLink("Back to Index", "Index")
+

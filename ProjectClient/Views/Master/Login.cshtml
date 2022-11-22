@@ -1,0 +1,18 @@
+﻿@model ProjectClient.Models.Googlesheet
+@{
+    ViewBag.Title = "Login";
+}
+<h2></h2>
+@using (Html.BeginForm())
+{
+    <span> UserName :</span>@Html.TextBox("UserName")<br />
+    <span> Password :</span>@Html.TextBox("Password")<br />
+    <div
+        class="from-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="LOGIN" class="btn btn-default"/>
+        </div>
+    </div>
+    <p style="color:red">@ViewBag.Value</p>
+
+ }

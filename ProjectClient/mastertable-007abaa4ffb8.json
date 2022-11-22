@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mastertable",
+  "private_key_id": "007abaa4ffb855d559872da553dcb9376483d678",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCr3KZsW5jtTyA0\n7j7d4wyERiEkD9AUP+WBhO90aUJtkMv3x91mqAafjArEc3Gn4Dh6UU+BtolrNleU\n7yag+vNgC+pV+oVDrAb5zuId84r24a7AshO2yPRPg19xCRHNZVRC3G32rhp+B0+C\ncfHcdvrV6EFiiefbLWiBA22NtSxVgUSDp7Nagow2jzFmGlBPhESeXO2KRRJhUg4Y\nAY8YTOzDxra2xh/lavazptEEemisVWZHe4QfnzS45rImR+rspAxbrVjD+Faj3Ddf\nJ5bihIz7eUQhBMRDfVi3ubOPLNiJ1PBly2oG18+NvZ8eCI43TtQwhBNinj7vvumV\ngEQNxCAzAgMBAAECggEAHwsmTKBnCUanrKf0VyQyGJqKVfc9QMsh67lVf5Ob2iqz\njThe97IWMC+dqkqoFwjbaszRLb8JJ4KTY2WndqCd4ZWFaK5t8AFc6TbDhWF+koXF\niS0hfnziFJLIZKScwJszEzi57DsasfUkGY33gDlFqengFaqPZPnYzKUP3u8A6Ri6\nROqlySshzufA10T9gyuAdtyZ9THjTAbws6DYL7DocPtMYG31tgUhcrYXNfxmfzVC\nGhY/ntGt26UkSnEMiJEge8cRXyLSWMQjA17PgD57lTHD6RnQIVTnzVL+11Xmm3Wx\nbyuo+UVATNYFjpKVLWQU8tb7j52eO+1NCLreNTYHgQKBgQDqmOiPrPHz/grwFKnh\n2x2LN+w4kU+2mCm9xuQNGIz5rbXgpGgFkMxq4Kwt5WHRXnfw/OLyQn3Btbi/pAHU\n6dLSxAq3A04D3zaX1uwW5uDsqOuFPUXNdRU6otIxUIfxpKVGTqlU4mcB24y09F1B\nj+eenIv/JO3MSBGQtmsVPzctIQKBgQC7iomfjTGNUiFjz1heBBnVKL3vR1TuflQy\ngUNQE4julyyd8DxSNe+9LSqajmNcXLSO3dtEuZgHEtuZgh1z330qm6rTGNlZDGOg\nqtYwNMYDofnODUW/2nOC2bhnxKlbpG8B07mhH87W6BMFI2UQ4dnFzHSs2/X0ap4P\nFdcOBW4u0wKBgQDcDLuv8Pgu9m8KDUfgW6iVqsn/sYXE72vP4ByPkCTEGkXMxknw\nVob4BXBbyJp9ShBVUtAJj4boSW1XDR7OuNkQ6+RlEEuAZEKQIH/pZ305X6UzoGq2\nMonMK2ff6/roFZkVnrlEru0SF/8eyUwkMDiBVbQXimsnv74CMKm3D0nRIQKBgGps\nVWirMQFnJ/eBxD2lyhsCQbY1HmcwXQtD+zTHwR7TvsfpefGVFfSeWtzWDGBvYy7n\nivRW9YSeGOvlwFzu6BJzv96G7V/w/eBA0ccNS4joM9/P/FLA3mfUsSaBnTGaADxj\nL6XVbQTbMV/rFAEeiPwL5/Hn6IzIq+UXmbAlOL9tAoGAdHRPuNxvdP7BIonKn9f3\njHtUb+VFzGHm22wKDfxDV2gdlAufToqkShAM2cdACkctJOO+JrwKwYF0+A6hYyyH\nQmNk4uhOUv++mw5W0iT+pJ3oMABYjiiN/+ZyzvXsNcV04SuvFQv/174nhfVwnnFX\nM03LfF9xWSdOwePdcCcdypc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mastertable@mastertable.iam.gserviceaccount.com",
+  "client_id": "109133131205020275071",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mastertable%40mastertable.iam.gserviceaccount.com"
+}

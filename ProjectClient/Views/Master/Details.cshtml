@@ -1,0 +1,70 @@
+﻿@model ProjectClient.Models.Googlesheet
+
+@{ ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+@using (Html.BeginForm("Details", "Master"))
+{
+    <table>
+        <tr>
+
+            <td>@Html.Label("ID") </td>
+            <td>@Html.TextBox("ID")</td>
+
+
+        </tr>
+        <tr>
+
+            <td> @Html.Label("FirstName")</td>
+            <td>@Html.TextBox("FirstName")</td>
+        </tr>
+        <tr>
+
+            <td> @Html.Label("LastName")</td>
+            <td>@Html.TextBox("LastName")</td>
+
+        </tr>
+        <tr>
+
+            <td>@Html.Label("Mobile")</td>
+            <td>@Html.TextBox("Mobile")</td>
+        </tr>
+        <tr>
+
+            <td>@Html.Label("Alternatemobilenumber")</td>
+            <td>@Html.TextBox("Alternatemobilenumber")</td>
+
+        </tr>
+        <tr>
+
+            <td>@Html.Label("EmailID")</td>
+            <td>@Html.TextBox("EmailID")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("IDType")</td>
+            <td>@Html.TextBox("IDType")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("IDProofnumber")</td>
+            <td>@Html.TextBox("IDProofnumber")</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("IDproof")
+            </td>
+            <td>
+                @Html.TextBox("file", "", new { type = "file" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Photo")</td>
+            <td><img src="@Url.Content(Model.Photo)" width="200" height="200" /></td>
+        </tr>
+    </table>
+ }
+
+
+ @Html.ActionLink("Back to Index", "Index")
+
+
